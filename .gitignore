@@ -1,1 +1,7 @@
 /node_modules
+/.vscode
+/.repo
+/img/
+/config/
+/Backup/
+package-lock.json

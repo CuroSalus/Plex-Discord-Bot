@@ -1,13 +1,11 @@
-// packages --------------------------------------------------------------------
-const Discord = require('discord.js');
+import Discord from 'discord.js';     // Discord.
+import keys from './config/keys.js';  // Keys file.
+import music from './app/music.js';   // Bot functions.
 
-// my keys ---------------------------------------------------------------------
-var keys = require('./config/keys.js');
-
-// discord client --------------------------------------------------------------
 const client = new Discord.Client();
-
-// bot functions ---------------------------------------------------------------
-require('./app/music.js')(client);
-
+music(client);
 client.login(keys.botToken);
+
+process.on('SIGTERM', () => {
+    console.info("Closing!");
+});
